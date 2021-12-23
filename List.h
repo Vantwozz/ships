@@ -13,7 +13,7 @@ public:
 	int GetSize();
 	string& operator[](const int index);
 private:
-	class Node
+	class Node//класс элемента очереди
 	{
 	public:
 		Node* pNext;
@@ -25,5 +25,5 @@ private:
 		}
 	};
 	int Size;
-	Node* head;
+	Node* head;//"голова" очереди для возможности обращения к очереди
 };
