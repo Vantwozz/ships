@@ -1,16 +1,16 @@
 #include "List.h"
-List::List()
+List::List()//конструктор для создания пустой очереди
 {
 	Size = 0;
 	head = nullptr;
 }
 
-List::~List()
+List::~List()//деконструктор
 {
 	clear();
 }
 
-void List::pop_front()
+void List::pop_front()//удаление первого элемента очереди, изменение Head, чтобы можно было использовать очередь
 {
 	Node* temp = head;
 	head = head->pNext;
@@ -18,7 +18,7 @@ void List::pop_front()
 	Size--;
 }
 
-void List::push_back(string data)
+void List::push_back(string data)//добавление в конец очереди
 {
 	if (head == nullptr)
 	{
@@ -36,7 +36,7 @@ void List::push_back(string data)
 	Size++;
 }
 
-void List::clear()
+void List::clear()//очистка очереди
 {
 	while (Size)
 	{
@@ -44,7 +44,7 @@ void List::clear()
 	}
 }
 
-string& List::operator[](const int index)
+string& List::operator[](const int index)//оператор квадратных скобок для удобного просмотра очереди
 {
 	int counter = 0;
 	Node* current = this->head;
@@ -59,6 +59,6 @@ string& List::operator[](const int index)
 	}
 }
 
-int List::GetSize() {
+int List::GetSize() const {
 	return Size;
 }
