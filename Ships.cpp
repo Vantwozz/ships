@@ -7,12 +7,12 @@ int main()
 {
     ifstream fin("SHIPS.in");
     ofstream fout("SHIPS.out");
-    if (!fin.is_open()) {
+    if (!fin.is_open()) {//проверка на открытие файла
         cerr << "Input file wasn't oppened try again";
         fout << "Input file wasn't oppened try again";
         return 0;
     }
-    if (fin.peek() == EOF) { 
+    if (fin.peek() == EOF) { //проверка на пустоту файла
         cerr << "Input file is empty.";
         fout << "Input file is empty.";
         return 0;
@@ -20,23 +20,23 @@ int main()
     List queue;
     int num;
     string data;
-    vector<string> port;
+    vector<string> port;//созндание порта
     int n;
-    fin >> n;
-    if (n <= 0 || n > 10) {
+    fin >> n;//чтение первой строчки с количеством причалов
+    if (n <= 0 || n > 10) {//проверка на количество причалов
         cerr << "wrong number of pieres" << endl;
         fout<< "wrong number of pieres" << endl;
         return 0;
     }
     fin.ignore();
-    for (int i = 0; i != n; i++){
+    for (int i = 0; i != n; i++){//создание пустых причалов
         port.push_back("");
     }
     while (fin >> num) {
         if (num == 1) {
             fin.ignore();
             getline(fin, data);
-            for (int i = 0; i != port.size(); i++) {
+            for (int i = 0; i != port.size(); i++) {//цикл, проверяющий все причалы на пустоту и добавляющий корабли на свободный причал или в очередь
                 if (port[i] == "") {
                     fout << data << " comming to pier number " << i+1 << endl;
                     port[i] = data;
@@ -50,12 +50,12 @@ int main()
         }
         else if (num == 2) {
             fin >> n;
-            if (queue.GetSize() != 0) {
-                if (n <= port.size() && n > 0) {
+            if (queue.GetSize() != 0) {//проверка на пустоту очереди
+                if (n <= port.size() && n > 0) {//проверка на номер причала
                     n--;
                     fout << port[n] << " is leaving port. " << queue[0] << " is comming to pier number " << n + 1 << endl;
-                    port[n] = queue[0];
-                    queue.pop_front();
+                    port[n] = queue[0];добавление нового корабля к заданному причалу
+                    queue.pop_front();удаление корабля из очереди
                 }
                 else {
                     cerr << "wrong pier number" << endl;
@@ -67,7 +67,7 @@ int main()
                 if (n <= port.size() && n > 0) {
                     n--;
                     fout << port[n] << " is leaving port."  << endl;
-                    port[n] = "";
+                    port[n] = "";//корабль покидает порт, но причал остается пустой, т.к. очереди нет
                 }
                 else {
                     cerr << "wrong pier number" << endl;
@@ -77,9 +77,9 @@ int main()
             }
         }
         else if (num == 3) {
-            if (queue.GetSize() != 0) {
+            if (queue.GetSize() != 0) {//проверка на пустоту в очереди
                 fout << "There are " << queue.GetSize() << " ship(s) in queue: " << endl;
-                for (int i = 0; i != queue.GetSize(); i++) {
+                for (int i = 0; i != queue.GetSize(); i++) {//выведение всех кораблей в очереди
                     fout << i + 1 << ". " << queue[i] << endl;
                 }
             }
@@ -90,10 +90,10 @@ int main()
         else if (num == 4) {
             fout << "There are " << port.size() << " pier(es) in port. Ships near pieres: " << endl;
             for (int i = 0; i != port.size(); i++) {
-                if (port[i] != "") {
+                if (port[i] != "") {выведение кораблей при причалах
                     fout << i + 1 << ". " << port[i] << endl;
                 }
-                else {
+                else {//если причал пустой, выведение соответствующей информации
                     fout << "Pier number " << i + 1 << " is free." << endl;
                 }
             }
