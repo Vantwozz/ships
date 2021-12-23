@@ -1,0 +1,77 @@
+There are no ships in queue.
+
+There are 4 pier(es) in port. Ships near pieres: 
+Pier number 1 is free.
+Pier number 2 is free.
+Pier number 3 is free.
+Pier number 4 is free.
+
+Ship 1 comming to pier number 1
+
+There are 4 pier(es) in port. Ships near pieres: 
+1. Ship 1
+Pier number 2 is free.
+Pier number 3 is free.
+Pier number 4 is free.
+
+There are no ships in queue.
+
+Ship 2 comming to pier number 2
+
+Ship 3 comming to pier number 3
+
+Ship 4 comming to pier number 4
+
+There are 4 pier(es) in port. Ships near pieres: 
+1. Ship 1
+2. Ship 2
+3. Ship 3
+4. Ship 4
+
+There are no ships in queue.
+
+Ship 5 comming to port but will wait in queue because there are no free pieres
+
+Ship 6 comming to port but will wait in queue because there are no free pieres
+
+There are 4 pier(es) in port. Ships near pieres: 
+1. Ship 1
+2. Ship 2
+3. Ship 3
+4. Ship 4
+
+There are 2 ship(s) in queue: 
+1. Ship 5
+2. Ship 6
+
+Ship 2 is leaving port. Ship 5 is comming to pier number 2
+
+There are 4 pier(es) in port. Ships near pieres: 
+1. Ship 1
+2. Ship 5
+3. Ship 3
+4. Ship 4
+
+There are 1 ship(s) in queue: 
+1. Ship 6
+
+Ship 4 is leaving port. Ship 6 is comming to pier number 4
+
+Ship 3 is leaving port.
+
+There are 4 pier(es) in port. Ships near pieres: 
+1. Ship 1
+2. Ship 5
+Pier number 3 is free.
+4. Ship 6
+
+Ship 7 comming to pier number 3
+
+There are 4 pier(es) in port. Ships near pieres: 
+1. Ship 1
+2. Ship 5
+3. Ship 7
+4. Ship 6
+
+There are no ships in queue.
+
